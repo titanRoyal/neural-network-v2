@@ -43,6 +43,9 @@ function neural_net(inp, nh, o, options = {}) {
     for (i = 0; i < inp.bias.length; i++) {
       this.bias[i] = inp.bias[i].copy()
     }
+    this.Activation=[...inp.Activation];
+    this.momentCount=inp.momentCount;
+    this.mr=inp.mr;
   } else {
     this.input_n = inp;
     this.hiden_n = nh.map(data => {
